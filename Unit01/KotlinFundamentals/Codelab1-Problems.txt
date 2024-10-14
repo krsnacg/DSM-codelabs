@@ -1,0 +1,142 @@
+
+1. Print messages
+
+fun main() {
+    println("Use the val keyword when the value doesn't change.")
+    println("Use the var keyword when the value can change.")
+    println("When you define a function, you define the parameters that can be passed to it.")
+    println("When you call a function, you pass arguments for the parameters.")
+}
+
+2. Fix compile error
+
+Errores:
+- Se usa el signo "}" para cerrar la llamada a la funcion println cuando deberia ser el signo ")".
+- No se usa adecuadamente la sintaxis para declarar un literal de cadena, se esta usando simbolos diferentes(" y ').
+
+Codigo corregido
+
+
+3. String templates
+Errores:
+- Se están intentando modificar las constantes discountPercentage y offer despues de haber sido declaradas
+
+Codigo corregido:
+fun main() {
+    val item = "Google Chromecast"
+    val discountPercentage = 20
+    val offer = "Sale - Up to $discountPercentage% discount on $item! Hurry up!"
+    
+    println(offer)
+}
+
+4. String concatenation
+
+Step 1:
+El programa imprimirá la siguiente linea:
+The total party size is: 2030
+
+Errores:
+- El codigo espera realizar una suma de las variables numberOfKids y numberOfAdults sin embargo estas son variables declaradas como cadena, por lo que se necesita declararlas como numeros para usar la variable que contiene el resultado de esta suma dentro del string template
+
+Codigo corregido
+fun main() {
+    val numberOfAdults = 20
+    val numberOfKids = 30
+    val total = numberOfAdults + numberOfKids
+    println("The total party size is: $total")
+}
+
+5. Message formatting
+- El resultado era el esperado
+
+6. Basic math operations
+Step 1: Codigo corregido
+fun main() {
+    val firstNumber = 10
+    val secondNumber = 5
+    println("$firstNumber + $secondNumber = ${firstNumber+secondNumber}")
+}
+
+Step 2: Definir funcion add
+fun add(first:Int, second:Int): Int{
+    return first + second
+}
+
+Step 3: Definir funcion substract
+fun substract(first:Int, second: Int): Int {
+    return first - second
+}
+
+funcion main() modificada:
+fun main() {
+    val firstNumber = 10
+    val secondNumber = 5
+    val thirdNumber = 8
+    
+    val result = add(firstNumber, secondNumber)
+    val anotherResult = add(firstNumber, thirdNumber)
+    
+    val thirdResult = substract(secondNumber, thirdNumber)
+
+    println("$firstNumber + $secondNumber = $result")
+    println("$firstNumber + $thirdNumber = $anotherResult")
+    println("$secondNumber - $thirdNumber = $thirdResult")
+}
+
+7. Default parameters
+
+Step 1: Implement function displayAlertMessage
+fun displayAlertMessage(OS: String, emailId: String): String {
+    return "There's a new sign-in request on $OS for your Google Account $emailId."
+}
+
+Step 2: Add default value to OS parameter
+fun displayAlertMessage(OS: String = "Unknown OS", emailId: String): String {
+    return "There's a new sign-in request on $OS for your Google Account $emailId."
+}
+
+
+8. Pedometer
+Codigo corregido:
+fun main() {
+    val steps = 4000
+    val caloriesBurned = pedometerStepsToCalories(steps);
+    println("Walking $steps steps burns $caloriesBurned calories") 
+}
+
+fun pedometerStepsToCalories(numberOfSteps: Int): Double {
+    val caloriesBurnedForEachStep = 0.04
+    val TotalCaloriesBurned = numberOfSteps * caloriesBurnedForEachStep
+    return TotalCaloriesBurned
+}
+
+
+9. Compare two numbers
+
+fun main() {
+    println(compareTimeSpent(300,250))
+    println(compareTimeSpent(300,300))
+    println(compareTimeSpent(200,220))
+}
+
+fun compareTimeSpent(timeSpentToday: Int, timeSpentYesterday: Int): Boolean {
+    return  if (timeSpentToday > timeSpentYesterday) true else false
+}
+
+10. Move duplicate code into a function
+Codigo optimizado:
+fun main() {
+    cityClimateDetails("Ankara",27,31,82)
+    cityClimateDetails("Tokyo",32,36,10)
+    cityClimateDetails("Cape Town",59,64,2)
+    cityClimateDetails("Guatemala City",50,55,7)
+}
+
+fun cityClimateDetails(city: String = "Unknown", lowTemp: Int = 0, highTemp: Int = 0, rainChance: Int = 0) {
+    println("City: $city")
+    println("Low temperature: $lowTemp, High temperature: $highTemp")
+    println("Chance of rain: $rainChance%\n")
+}
+
+

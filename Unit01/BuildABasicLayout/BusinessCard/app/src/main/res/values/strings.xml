@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Business Card</string>
+    <string name="name">Gabriel Cruz</string>
+    <string name="title">Android Developer Extraordinaire</string>
+    <string name="socialmediahandle">\@socialmediahandle</string>
+    <string name="mail">gabriel.cruz2@unmsm.edu.pe</string>
+    <string name="phone">+11 (123) 444 555 666</string>
+    <string name="phone_icon_desc">Phone Icon</string>
+    <string name="share_icon_desc">Share icon</string>
+    <string name="mail_icon_desc">Mail icon</string>
+</resources>
